@@ -21,9 +21,7 @@ protected:
 
 	virtual void BeginPlay() override;
 
-	FVector ActorStartLocation;
-	FVector ActorEndLocation;
-	//FVector Distance;
+	float Direction;
 
 	UPROPERTY(EditAnywhere, Category = "MoveActor")
 	float Speed = 100.f;
@@ -31,7 +29,8 @@ protected:
 	UFUNCTION()
 	void OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
-	
+	float MinPosition = -8400.f;
+	float MaxPosition = 5600.f;
 
 
 public:	
